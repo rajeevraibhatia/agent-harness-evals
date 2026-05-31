@@ -10,7 +10,15 @@ def nb(cells):
         "nbformat_minor": 4,
         "metadata": {
             "kernelspec": {"display_name": "Python 3", "language": "python", "name": "python3"},
-            "language_info": {"name": "python", "version": "3.10.0"},
+            "language_info": {
+                "name": "python",
+                "version": "3.10.0",
+                "codemirror_mode": {"name": "ipython", "version": 3},
+                "file_extension": ".py",
+                "mimetype": "text/x-python",
+                "nbconvert_exporter": "python",
+                "pygments_lexer": "ipython3"
+            },
             "colab": {"provenance": []}
         },
         "cells": cells
