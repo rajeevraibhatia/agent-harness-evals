@@ -3,13 +3,13 @@
 # 🤖 Agent Harness & Evals
 ### A Production AI Course for Engineers
 
-[![Course](https://img.shields.io/badge/Full%20Course-rajeevraibhatia.com-7c3aed?style=for-the-badge)](https://rajeevraibhatia.com/curriculum/agent-harness-evals)
+[![Course](https://img.shields.io/badge/Full%20Course-rajeevraibhatia.com-7c3aed?style=for-the-badge)](https://rajeevraibhatia.com/ai-courses/agent-harness-evals)
 [![Stars](https://img.shields.io/github/stars/rajeevraibhatia/agent-harness-evals?style=for-the-badge&color=yellow)](https://github.com/rajeevraibhatia/agent-harness-evals/stargazers)
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 
 **From ReAct loops to production eval harnesses.** 8 modules. Medium → Advanced. Interview prep included.
 
-*Part of [AI Courses](https://rajeevraibhatia.com/curriculum) by [Rajeev Rai Bhatia](https://rajeevraibhatia.com)*
+*Part of [AI Courses](https://rajeevraibhatia.com/ai-courses) by [Rajeev Rai Bhatia](https://rajeevraibhatia.com)*
 
 </div>
 
@@ -64,14 +64,14 @@ All notebooks use the **OpenAI SDK** (`gpt-4o`) and run standalone in Google Col
 
 | # | Module | Key Concepts | Time | Level | Read | Notebook |
 |---|--------|-------------|------|-------|------|----------|
-| 1 | **Agent Architecture Taxonomy** | Workflows vs agents, 6 building blocks, ReAct vs Plan-then-Execute, ACI | ~1h | 🟡 Medium | [→ Read](https://rajeevraibhatia.com/curriculum/agent-harness-evals#module-1) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/rajeevraibhatia/agent-harness-evals/blob/main/notebooks/m1_react_loop.ipynb) |
-| 2 | **Tool Design & the ACI** | JSON schema design, idempotency, function calling, MCP, tool registry | ~1.5h | 🟡 Medium | [→ Read](https://rajeevraibhatia.com/curriculum/agent-harness-evals#module-2) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/rajeevraibhatia/agent-harness-evals/blob/main/notebooks/m2_tool_registry.ipynb) |
-| 3 | **State, Memory & Context Engineering** | 3 memory tiers, context rot, MemoryManager, session handoff | ~1.5h | 🟠 Med-Adv | [→ Read](https://rajeevraibhatia.com/curriculum/agent-harness-evals#module-3) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/rajeevraibhatia/agent-harness-evals/blob/main/notebooks/m3_memory_manager.ipynb) |
-| 4 | **Multi-Agent Orchestration Patterns** | Supervisor, debate, swarm, producer-critic, deadlock detection | ~1.5h | 🔴 Advanced | [→ Read](https://rajeevraibhatia.com/curriculum/agent-harness-evals#module-4) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/rajeevraibhatia/agent-harness-evals/blob/main/notebooks/m4_multi_agent.ipynb) |
-| 5 | **Harness Architecture** | Initializer/Executor pattern, git as memory, replay log, circuit breakers | ~2h | 🔴 Advanced | [→ Read](https://rajeevraibhatia.com/curriculum/agent-harness-evals#module-5) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/rajeevraibhatia/agent-harness-evals/blob/main/notebooks/m5_harness.ipynb) |
-| 6 | **Eval Suite Design** | pass@k vs pass^k, 3 grader types, LLM-as-judge calibration, SWE-Bench | ~2h | 🔴 Advanced | [→ Read](https://rajeevraibhatia.com/curriculum/agent-harness-evals#module-6) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/rajeevraibhatia/agent-harness-evals/blob/main/notebooks/m6_eval_suite.ipynb) |
-| 7 | **Safety, Failure Modes & Reliability** | Prompt injection, excessive agency, 6-failure taxonomy, RL on trajectories | ~1h | 🔴 Advanced | [→ Read](https://rajeevraibhatia.com/curriculum/agent-harness-evals#module-7) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/rajeevraibhatia/agent-harness-evals/blob/main/notebooks/m7_safety.ipynb) |
-| 8 | **Capstone: Document Research Agent** | End-to-end build — ToolRegistry, MemoryManager, Harness, eval suite | ~3h | 🔴 Advanced | [→ Read](https://rajeevraibhatia.com/curriculum/agent-harness-evals#module-8) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/rajeevraibhatia/agent-harness-evals/blob/main/notebooks/m8_capstone.ipynb) |
+| 1 | **Agent Architecture Taxonomy** | Workflows vs agents, 6 building blocks, ReAct vs Plan-then-Execute, ACI | ~1h | 🟡 Medium | [→ Read](https://rajeevraibhatia.com/ai-courses/agent-harness-evals#module-1) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/rajeevraibhatia/agent-harness-evals/blob/main/notebooks/m1_react_loop.ipynb) |
+| 2 | **Tool Design & the ACI** | JSON schema design, idempotency, function calling, MCP, tool registry | ~1.5h | 🟡 Medium | [→ Read](https://rajeevraibhatia.com/ai-courses/agent-harness-evals#module-2) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/rajeevraibhatia/agent-harness-evals/blob/main/notebooks/m2_tool_registry.ipynb) |
+| 3 | **State, Memory & Context Engineering** | 3 memory tiers, context rot, MemoryManager, session handoff | ~1.5h | 🟠 Med-Adv | [→ Read](https://rajeevraibhatia.com/ai-courses/agent-harness-evals#module-3) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/rajeevraibhatia/agent-harness-evals/blob/main/notebooks/m3_memory_manager.ipynb) |
+| 4 | **Multi-Agent Orchestration Patterns** | Supervisor, debate, swarm, producer-critic, deadlock detection | ~1.5h | 🔴 Advanced | [→ Read](https://rajeevraibhatia.com/ai-courses/agent-harness-evals#module-4) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/rajeevraibhatia/agent-harness-evals/blob/main/notebooks/m4_multi_agent.ipynb) |
+| 5 | **Harness Architecture** | Initializer/Executor pattern, git as memory, replay log, circuit breakers | ~2h | 🔴 Advanced | [→ Read](https://rajeevraibhatia.com/ai-courses/agent-harness-evals#module-5) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/rajeevraibhatia/agent-harness-evals/blob/main/notebooks/m5_harness.ipynb) |
+| 6 | **Eval Suite Design** | pass@k vs pass^k, 3 grader types, LLM-as-judge calibration, SWE-Bench | ~2h | 🔴 Advanced | [→ Read](https://rajeevraibhatia.com/ai-courses/agent-harness-evals#module-6) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/rajeevraibhatia/agent-harness-evals/blob/main/notebooks/m6_eval_suite.ipynb) |
+| 7 | **Safety, Failure Modes & Reliability** | Prompt injection, excessive agency, 6-failure taxonomy, RL on trajectories | ~1h | 🔴 Advanced | [→ Read](https://rajeevraibhatia.com/ai-courses/agent-harness-evals#module-7) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/rajeevraibhatia/agent-harness-evals/blob/main/notebooks/m7_safety.ipynb) |
+| 8 | **Capstone: Document Research Agent** | End-to-end build — ToolRegistry, MemoryManager, Harness, eval suite | ~3h | 🔴 Advanced | [→ Read](https://rajeevraibhatia.com/ai-courses/agent-harness-evals#module-8) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/rajeevraibhatia/agent-harness-evals/blob/main/notebooks/m8_capstone.ipynb) |
 
 ---
 
@@ -141,7 +141,7 @@ Notebooks are being added module by module. Star the repo to follow along. PRs w
 
 <div align="center">
 
-Built by [Rajeev Rai Bhatia](https://rajeevraibhatia.com) · [AI Courses](https://rajeevraibhatia.com/curriculum) · [LinkedIn](https://www.linkedin.com/in/rajeevraibhatia/)
+Built by [Rajeev Rai Bhatia](https://rajeevraibhatia.com) · [AI Courses](https://rajeevraibhatia.com/ai-courses) · [LinkedIn](https://www.linkedin.com/in/rajeevraibhatia/)
 
 ⭐ **Star this repo** to help other engineers find it
 
