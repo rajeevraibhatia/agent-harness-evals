@@ -4,6 +4,31 @@ import json, os
 COLAB_BASE = "https://colab.research.google.com/github/rajeevraibhatia/agent-harness-evals/blob/main/notebooks/"
 COURSE_URL = "https://rajeevraibhatia.com/curriculum/agent-harness-evals"
 
+SETUP_CODE = '''# ── Setup ─────────────────────────────────────────────────────────────────────
+# Option A: OpenAI API (recommended for Colab)
+!pip install openai --quiet
+
+import os
+from openai import OpenAI
+
+# Set your OpenAI API key — in Colab: Secrets (🔑) → add OPENAI_API_KEY
+# Then enable notebook access, or paste directly (don't commit keys to git)
+# os.environ["OPENAI_API_KEY"] = "sk-..."   # ← uncomment and paste if not using Secrets
+
+client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
+MODEL = "gpt-4o"
+
+# ── Option B: Ollama (local, no API key, no cost) ─────────────────────────────
+# 1. Install Ollama: https://ollama.com/download
+# 2. Run: ollama pull llama3.2
+# 3. Uncomment the two lines below and comment out the OpenAI lines above:
+#
+# client = OpenAI(base_url="http://localhost:11434/v1", api_key="ollama")
+# MODEL = "llama3.2"   # or: mistral, phi4, gemma3, qwen2.5, etc.
+#
+# Everything in this notebook works with either client — MODEL is passed through.
+print(f"Client ready. Using model: {MODEL}")'''
+
 def nb(cells):
     return {
         "nbformat": 4,
@@ -184,7 +209,7 @@ A ReAct (Reasoning + Acting) loop from scratch using the OpenAI SDK — no LangC
 - Tree of Thoughts — Yao et al. (2023) https://arxiv.org/abs/2305.10601
 
 ---""".replace("{COURSE_URL}", COURSE_URL)),
-    code('# Install dependencies\n!pip install openai --quiet'),
+    code(SETUP_CODE),
     code(M1_REACT),
     md("""## Exercise
 
@@ -369,7 +394,7 @@ A `ToolRegistry` with schema validation, idempotency classification, and automat
 - Toolformer — Schick et al. (2023) https://arxiv.org/abs/2302.01318
 
 ---""".replace("{COURSE_URL}", COURSE_URL)),
-    code('!pip install openai --quiet'),
+    code(SETUP_CODE),
     code(M2_REGISTRY),
     md("""## Exercise
 
@@ -586,7 +611,7 @@ A `MemoryManager` with three memory tiers: in-context rolling summary, episodic 
 - Voyager — Wang et al. (2023) https://arxiv.org/abs/2305.16291
 
 ---""".replace("{COURSE_URL}", COURSE_URL)),
-    code('!pip install openai --quiet'),
+    code(SETUP_CODE),
     code(M3_MEMORY),
     md("""## Exercise
 
@@ -763,7 +788,7 @@ A supervisor + 2 specialist agents with a producer-critic review loop, using raw
 - AutoGen — Wu et al. (2023) https://arxiv.org/abs/2308.08155
 
 ---""".replace("{COURSE_URL}", COURSE_URL)),
-    code('!pip install openai --quiet'),
+    code(SETUP_CODE),
     code(M4_MULTI),
     md("""## Exercise
 
@@ -986,7 +1011,7 @@ A production-grade agent harness with Initializer/Executor pattern, replay log, 
 | Infinite loop | Ambiguous completion | Circuit breaker + step budget |
 
 ---""".replace("{COURSE_URL}", COURSE_URL)),
-    code('!pip install openai --quiet'),
+    code(SETUP_CODE),
     code(M5_HARNESS),
     md("""## Exercise
 
@@ -1186,7 +1211,7 @@ An eval harness with parallel trial execution, 3-grader composition (code, model
 SWE-Bench Verified (coding), GAIA (general), WebArena (browsing), τ-bench (tool use), AgentBench (multi-task)
 
 ---""".replace("{COURSE_URL}", COURSE_URL)),
-    code('!pip install openai --quiet'),
+    code(SETUP_CODE),
     code(M6_EVAL),
     md("""## Exercise
 
@@ -1396,7 +1421,7 @@ A `SafeAgentWrapper` with prompt injection detection, PII scrubbing, and a non-i
 - Let's Verify Step by Step (process rewards) — Lightman et al. (2023) https://arxiv.org/abs/2305.20050
 
 ---""".replace("{COURSE_URL}", COURSE_URL)),
-    code('!pip install openai --quiet'),
+    code(SETUP_CODE),
     code(M7_SAFETY),
     md("""## Exercise
 
@@ -1638,7 +1663,7 @@ End-to-end Document Research Agent combining all previous modules:
 3. Run your eval harness on [GAIA Level 1](https://huggingface.co/datasets/gaia-benchmark/GAIA) tasks
 
 ---""".replace("{COURSE_URL}", COURSE_URL)),
-    code('!pip install openai --quiet'),
+    code(SETUP_CODE),
     code(M8_CAPSTONE),
     md("## Eval Suite\n\nRun 5 eval tasks with pass@k scoring."),
     code(M8_EVAL),

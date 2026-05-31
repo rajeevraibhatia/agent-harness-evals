@@ -4,6 +4,31 @@ import json, os
 COLAB_BASE = "https://colab.research.google.com/github/rajeevraibhatia/agent-harness-evals/blob/main/building-agents/notebooks/"
 COURSE_URL = "https://rajeevraibhatia.com/curriculum/building-agents"
 
+SETUP_CODE = '''# ── Setup ─────────────────────────────────────────────────────────────────────
+# Option A: OpenAI API (recommended for Colab)
+!pip install openai --quiet
+
+import os
+from openai import OpenAI
+
+# Set your OpenAI API key — in Colab: Secrets (🔑) → add OPENAI_API_KEY
+# Then enable notebook access, or paste directly (don't commit keys to git)
+# os.environ["OPENAI_API_KEY"] = "sk-..."   # ← uncomment and paste if not using Secrets
+
+client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
+MODEL = "gpt-4o"
+
+# ── Option B: Ollama (local, no API key, no cost) ─────────────────────────────
+# 1. Install Ollama: https://ollama.com/download
+# 2. Run: ollama pull llama3.2
+# 3. Uncomment the two lines below and comment out the OpenAI lines above:
+#
+# client = OpenAI(base_url="http://localhost:11434/v1", api_key="ollama")
+# MODEL = "llama3.2"   # or: mistral, phi4, gemma3, qwen2.5, etc.
+#
+# Everything in this notebook works with either client — MODEL is passed through.
+print(f"Client ready. Using model: {MODEL}")'''
+
 def nb(cells):
     return {"nbformat": 4, "nbformat_minor": 4,
             "metadata": {
@@ -88,7 +113,7 @@ M1_EXERCISE = '''# Exercise: add a string_length tool
 m1 = nb([
     badge("m1_first_agent.ipynb", 1),
     md(f"# Module 1 — Your First Agent\n\n**Level:** Beginner | **Time:** ~30 min | [Full reading →]({COURSE_URL}#module-1)\n\n### What you'll build\nA working agent with one tool in 25 lines. No frameworks.\n\n### Key concepts\n- **Chatbot vs agent**: tool schema + loop = agent\n- The model *requests* tools; your code *runs* them\n- Loop exits when no tool calls are returned"),
-    code("!pip install openai --quiet"),
+    code(SETUP_CODE),
     code(M1_CODE),
     md("## Exercise\n\nAdd a `string_length(text)` tool that returns the number of characters in a string."),
     code(M1_EXERCISE)
@@ -164,7 +189,7 @@ M2_EXERCISE = '''# Exercise: add delete_note(index) tool
 m2 = nb([
     badge("m2_tools_memory.ipynb", 2),
     md(f"# Module 2 — Tools & Memory\n\n**Level:** Beginner | **Time:** ~45 min | [Full reading →]({COURSE_URL}#module-2)\n\n### Key concepts\n- Tool descriptions are the model's only docs — make them verbose\n- Conversation history = the `messages` list. Keep it between turns.\n- Return errors as strings, not exceptions"),
-    code("!pip install openai --quiet"),
+    code(SETUP_CODE),
     code(M2_CODE),
     md("## Exercise\n\nAdd a `delete_note(index)` tool. Handle out-of-range gracefully."),
     code(M2_EXERCISE)
@@ -236,7 +261,7 @@ def chat_with_retry(messages, tools, max_retries=3):
 m3 = nb([
     badge("m3_loops_reliability.ipynb", 3),
     md(f"# Module 3 — Loops & Reliability\n\n**Level:** Beginner | **Time:** ~45 min | [Full reading →]({COURSE_URL}#module-3)\n\n### Key concepts\n- Add `max_steps` — agents can loop forever without it\n- Circuit breaker: same tool call 3× in a row → stop\n- Error wrapping: always return errors as strings, never raise\n- Retry-with-backoff for rate limits and network errors"),
-    code("!pip install openai --quiet"),
+    code(SETUP_CODE),
     code(M3_CODE),
     md("## Exercise\n\nWrap the API call with exponential backoff."),
     code(M3_EXERCISE)
@@ -346,7 +371,7 @@ print("Course complete! Next: https://rajeevraibhatia.com/curriculum/agent-harne
 m4 = nb([
     badge("m4_research_bot.ipynb", 4),
     md(f"# Module 4 — Mini-Project: Research Bot\n\n**Level:** Beginner | **Time:** ~1h | [Full reading →]({COURSE_URL}#module-4)\n\n### What you'll build\nA complete research bot: search → save findings → synthesize answer.\n\n### The three-tool research pattern\n1. `search(query)` — find information\n2. `save_finding(source, text)` — store what matters\n3. `write_summary(question)` — synthesize the answer\n\nThis exact pattern is in production at every major AI company."),
-    code("!pip install openai --quiet\n# Optional for real search: !pip install tavily-python --quiet"),
+    code(SETUP_CODE + "\n\n# Optional: real web search\n# !pip install tavily-python --quiet"),
     code(M4_CODE),
     md("## Exercise\n\n(a) Replace mock search with Tavily. (b) Add relevance score filtering."),
     code(M4_EXERCISE),
