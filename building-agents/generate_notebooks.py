@@ -28,7 +28,7 @@ def code(src, cell_id=None):
             "source": [l+"\n" for l in lines[:-1]] + [lines[-1]]}
 
 def badge(filename, module_num):
-    return md(f'<div align="center">\n\n[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]({COLAB_BASE}{filename})\n[![Course](https://img.shields.io/badge/Course-rajeevraibhatia.com-7c3aed)]({COURSE_URL}#module-{module_num})\n\n</div>')
+    return md(f"[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]({COLAB_BASE}{filename}) [![Course](https://img.shields.io/badge/Course-rajeevraibhatia.com-7c3aed)]({COURSE_URL}#module-{module_num})")
 
 
 # ── M1 ────────────────────────────────────────────────────────────────────────

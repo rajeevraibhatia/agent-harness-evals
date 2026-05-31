@@ -43,12 +43,7 @@ def code(src, cell_id=None):
     }
 
 def colab_badge(filename, module_num):
-    return md(f"""<div align="center">
-
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]({COLAB_BASE}{filename})
-[![Course](https://img.shields.io/badge/Full%20Course-rajeevraibhatia.com-7c3aed)](https://rajeevraibhatia.com/curriculum/agent-harness-evals#module-{module_num})
-
-</div>""")
+    return md(f"[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]({COLAB_BASE}{filename}) [![Course](https://img.shields.io/badge/Full_Course-rajeevraibhatia.com-7c3aed)](https://rajeevraibhatia.com/curriculum/agent-harness-evals#module-{module_num})")
 
 
 # ── M1: ReAct Loop ────────────────────────────────────────────────────────────
