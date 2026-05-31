@@ -7,7 +7,7 @@ COURSE_URL = "https://rajeevraibhatia.com/curriculum/agent-harness-evals"
 def nb(cells):
     return {
         "nbformat": 4,
-        "nbformat_minor": 5,
+        "nbformat_minor": 4,
         "metadata": {
             "kernelspec": {"display_name": "Python 3", "language": "python", "name": "python3"},
             "language_info": {"name": "python", "version": "3.10.0"},
@@ -20,7 +20,6 @@ def md(text):
     lines = text.strip().split("\n")
     return {
         "cell_type": "markdown",
-        "id": f"md-{abs(hash(text)) % 100000}",
         "metadata": {},
         "source": [l + "\n" for l in lines[:-1]] + [lines[-1]]
     }
@@ -29,7 +28,6 @@ def code(src, cell_id=None):
     lines = src.strip().split("\n")
     return {
         "cell_type": "code",
-        "id": cell_id or f"code-{abs(hash(src)) % 100000}",
         "metadata": {},
         "execution_count": None,
         "outputs": [],
